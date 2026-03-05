@@ -1,0 +1,10 @@
+{
+  "workspaceDir": "C:\\repo\\FY26SDKChallenge\\src\\backend\\temp\\user_repo\\ws-20260305-142611",
+  "copilotSessionId": "6eaeaa80-1dab-4049-ac05-ceeeb9d7cb98",
+  "requirement": "create hello world notebook",
+  "workspaceSuffix": "fabric-workspace",
+  "fabricCapacity": "fabriccapacitycicd",
+  "envDev": true,
+  "envQa": true,
+  "envProd": true
+}
