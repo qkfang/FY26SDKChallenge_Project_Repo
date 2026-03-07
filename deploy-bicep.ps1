@@ -45,7 +45,7 @@ if (-not $env:SQL_AAD_ADMIN_NAME -or -not $env:SQL_AAD_ADMIN_OBJECT_ID) {
 }
 
 # ── Auto-detect capacity admin ────────────────────────────────────────────────
-$capacityAdmin = if ($env:FABRIC_CAPACITY_ADMIN_ID) { $env:FABRIC_CAPACITY_ADMIN_ID } else { $adUser.userPrincipalName }
+$capacityAdmin = if ($env:FABRIC_CAPACITY_ADMIN_ID) { $env:FABRIC_CAPACITY_ADMIN_ID } else { $adminUpn }
 Write-Host "  Capacity Admin: $capacityAdmin"
 
 # ── Deploy Bicep template ─────────────────────────────────────────────────────
