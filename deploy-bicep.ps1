@@ -50,7 +50,7 @@ Write-Host "  Capacity Admin: $capacityAdmin"
 
 # ── Deploy Bicep template ─────────────────────────────────────────────────────
 Write-Host "Deploying Bicep template '$TemplateFile' to '$ResourceGroup'..."
-$adminArray = "[\""$capacityAdmin\""]"
+$adminArray = ConvertTo-Json @($capacityAdmin) -Compress
 $rawOutput = az deployment group create `
     --resource-group $ResourceGroup `
     --template-file $TemplateFile `
