@@ -33,13 +33,14 @@ if (-not $rgExists) {
     Write-Host "Resource group '$ResourceGroup' already exists."
 }
 
-# ── Auto-detect signed-in user ────────────────────────────────────────────────
-$adUser = az ad signed-in-user show --output json | ConvertFrom-Json
+# ── Hardcoded signed-in user info (avoids az ad signed-in-user show in CI) ───
+$adminObjectId = "4b74544b-02c6-4e4f-b936-732c9c3fff65"
+$adminUpn      = "danielfang@MngEnvMCAP951655.onmicrosoft.com"
 
 # ── Auto-detect AAD admin for SQL Server if not set ──────────────────────────
 if (-not $env:SQL_AAD_ADMIN_NAME -or -not $env:SQL_AAD_ADMIN_OBJECT_ID) {
-    $env:SQL_AAD_ADMIN_NAME = $adUser.userPrincipalName
-    $env:SQL_AAD_ADMIN_OBJECT_ID = $adUser.id
+    $env:SQL_AAD_ADMIN_NAME = $adminUpn
+    $env:SQL_AAD_ADMIN_OBJECT_ID = $adminObjectId
     Write-Host "  SQL AAD Admin: $($env:SQL_AAD_ADMIN_NAME) ($($env:SQL_AAD_ADMIN_OBJECT_ID))"
 }
 
