@@ -62,4 +62,4 @@ if (-not $variableConfig.$Environment) {
 $variableConfig.$Environment | Add-Member -NotePropertyName "capacityId"   -NotePropertyValue $outputs.capacityId.value   -Force
 $variableConfig.$Environment | Add-Member -NotePropertyName "capacityName" -NotePropertyValue $outputs.capacityName.value -Force
 $variableConfig | ConvertTo-Json -Depth 3 | Set-Content $variableFile
-Write-Host "config/variable.json updated for $Environment."
+Write-Host "config/variable.json updated"
