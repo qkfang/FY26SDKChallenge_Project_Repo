@@ -63,8 +63,8 @@ $jsonLines = $rawOutput | Where-Object { $_ -notmatch '^\s*(WARNING|INFO|VERBOSE
 
 
 if ($LASTEXITCODE -ne 0) {
+    Write-Host "Raw output: $rawOutput"
     Write-Error "Bicep deployment failed."
-    Write-Error "Raw output: $rawOutput"
     exit 1
 }
 
