@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "b4c5d6e7f8a9b0c1d234",
+  "position": {
+    "x": 860,
+    "y": 80,
+    "z": 0,
+    "height": 260,
+    "width": 400
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SalesOrderHeader"
+                    }
+                  },
+                  "Property": "SalesTerritory"
+                }
+              },
+              "queryRef": "SalesOrderHeader.SalesTerritory"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SalesOrderHeader"
+                        }
+                      },
+                      "Property": "SubTotal"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(SalesOrderHeader.SubTotal)",
+              "nativeQueryRef": "Sum of SubTotal"
+            }
+          ]
+        }
+      }
+    },
+    "title": {
+      "show": {
+        "expr": {
+          "Literal": {
+            "Value": "true"
+          }
+        }
+      },
+      "text": {
+        "expr": {
+          "Literal": {
+            "Value": "'Revenue by Territory'"
+          }
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

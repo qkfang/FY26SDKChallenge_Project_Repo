@@ -1,7 +1,7 @@
 {
-  "workspaceDir": "C:\\repo\\FY26SDKChallenge\\src\\backend\\temp\\user_repo\\ws-20260305-142611",
-  "copilotSessionId": "32150c10-4a32-49e6-a3f0-ee35c4e8cd9d",
-  "requirement": "create hello world notebook",
+  "workspaceDir": "C:\\repo\\FY26SDKChallenge\\src\\backend\\temp\\user_repo\\ws-20260307-124324",
+  "copilotSessionId": "e4861601-d58b-4fc5-b5b7-beebf35da9e0",
+  "requirement": "Based on the sales dataset in Work IQ, create a notebook to populate mock data, generate a sales lakehouse and semantic model, then build a notebook for sample queiers and a Power BI report.",
   "workspaceSuffix": "fabric-workspace",
   "fabricCapacity": "fabriccapacitycicd",
   "envDev": true,

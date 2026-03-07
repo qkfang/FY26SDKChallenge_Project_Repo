@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "81ccad520580c297ada4",
+  "position": {
+    "x": 20,
+    "y": 80,
+    "z": 0,
+    "height": 260,
+    "width": 380
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ProductCategory"
+                    }
+                  },
+                  "Property": "Name"
+                }
+              },
+              "queryRef": "ProductCategory.Name"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SalesOrderDetail"
+                        }
+                      },
+                      "Property": "LineTotal"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(SalesOrderDetail.LineTotal)",
+              "nativeQueryRef": "Sum of LineTotal"
+            }
+          ]
+        }
+      }
+    },
+    "title": {
+      "show": {
+        "expr": {
+          "Literal": {
+            "Value": "true"
+          }
+        }
+      },
+      "text": {
+        "expr": {
+          "Literal": {
+            "Value": "'Revenue by Category'"
+          }
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
