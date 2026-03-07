@@ -71,8 +71,8 @@ jobs:
 
       - name: Deploy Bicep (QA)
         shell: pwsh
-        run: ./deploy-bicep.ps1 -Environment QA -ResourceGroup ${{ vars.RESOURCE_GROUP || 'rg-fabricsdk' }} -Location ${{ vars.LOCATION || 'australiaeast' }}
-
+        run: ./deploy-bicep.ps1
+        
       - name: Deploy CLI - Create Workspaces (QA)
         shell: pwsh
         run: ./deploy-cli.ps1 -Environment QA
