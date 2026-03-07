@@ -61,8 +61,10 @@ $rawOutput = az deployment group create `
 
 $jsonLines = $rawOutput | Where-Object { $_ -notmatch '^\s*(WARNING|INFO|VERBOSE|Bicep CLI)' }
 
+
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Bicep deployment failed."
+    Write-Error "Raw output: $rawOutput"
     exit 1
 }
 
